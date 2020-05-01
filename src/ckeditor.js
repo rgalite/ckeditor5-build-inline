@@ -29,11 +29,15 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
+import Comments from '@ckeditor/ckeditor5-comments/src/comments';
 
 export default class InlineEditor extends InlineEditorBase {}
 
 // Plugins to include in the build.
 InlineEditor.builtinPlugins = [
+	Autosave,
+	Comments,
 	Essentials,
 	UploadAdapter,
 	Autoformat,
@@ -79,7 +83,9 @@ InlineEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'|',
+			'comment'
 		]
 	},
 	image: {
@@ -87,7 +93,9 @@ InlineEditor.defaultConfig = {
 			'imageStyle:full',
 			'imageStyle:side',
 			'|',
-			'imageTextAlternative'
+			'imageTextAlternative',
+			'|',
+			'comment'
 		]
 	},
 	table: {
